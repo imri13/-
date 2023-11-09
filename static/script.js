@@ -14,6 +14,11 @@ function reportsPageFunc() {
     window.location.href = '/reports';
 }
 
+function requestsPageFunc() {
+    window.location.href = '/requests';
+}
+
+
 // Function to show password on mouse down and hide on mouse up
 function togglePasswordVisibility(event) {
     const passwordInput = document.getElementById('userPassword');
@@ -29,11 +34,21 @@ function togglePasswordVisibility(event) {
 }
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  var wrongMessage = document.getElementById("wrongMessage");
-  wrongMessage.style.display = "block";
+/*function showPopup() {
+    const popup = document.getElementById('popup-comment');
+    popup.style.display = 'block';
+    setTimeout(() => {
+        popup.style.display = 'none'; 
+    }, 2000); 
+}*/ 
 
-  setTimeout(function() {
-    wrongMessage.style.display = "none";
-  }, 2000);
-});
+function requestbuttonFunc() {
+    var request = document.getElementById("request");
+    request.value = "";
+    var popup = document.getElementById("popup-comment");
+    popup.style.display = "block";
+    setTimeout(function() {
+        popup.style.display = "none";
+      }, 2000);
+}
+

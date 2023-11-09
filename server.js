@@ -51,6 +51,10 @@ app.get('/logOut', (req,res)=>{
     res.redirect('home');
 });
 
+app.get('/requests', (req,res)=>{
+    res.render('request');
+});
+
 app.get('/reports', (req,res)=>{
     res.render('reports');
 });
