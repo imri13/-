@@ -1,9 +1,7 @@
-extends template 
-block content 
+extends template
+block content1 
     nav.navbar
         .navbar-links
+            a(href='/requests') Contact Us
             a(href='/logOut') Log out
-    .container
-        h1 מה תרצה לעשות
-        button#reports-button(onclick='reportsPageFunc()') צפייה בדו"חות
-        button#reports-button(onclick='requestsPageFunc()') צור קשר 
+    iframe(title='report 1', width='80%', height='80%', src="https://app.powerbi.com/reportEmbed?reportId=d732ac87-5367-49c8-85e3-8e630bb7758f&autoAuth=true&ctid=474cbbe4-ab8e-40ae-a518-715ca4c0ba5a", frameborder='0', allowfullscreen='true')

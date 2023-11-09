@@ -18,43 +18,31 @@ body {
     padding: 0;
   }
   
- /* img.logo(src='Logo.png', alt='Logo') the logo of the company as it was earlier*/
- .h7 {
-  align-self: flex-start; /* Aligns the item at the start of the cross axis, which is at the top if the flex direction is row */
-  display: flex; /* Flex display to make align-self work */
-  justify-content: center; /* Horizontally center the content */
-  width: 100%; /* Full width to make it stretch across the top */
-  position: absolute; /* Take the element out of the document flow and position it at the top */
-  top: 0; /* Position at the top of the parent element or the viewport if no positioned parent is present */
-  left: 0; /* Position at the left of the parent element or the viewport */
-  transition: transform 0.3s ease; /* Smooth transition for the grow effect */
-  font-family: "suezone"; /* Correct the font-family name if it's not right */
-  font-size: 2em; /* Adjust font-size as needed to make it much bigger */
-  text-shadow: 2px 2px 4px #000; /* Example shadow - black, offset 2px right and down, blur radius 4px */
-}
-
-.h7:hover {
-  transform: scale(1.3); /* Grow the element to 110% when hovered */
-}
-
 
   .container {
     max-width: 400px;
     width: 100%;
-    background-color: #fff;
+    background-color: rgba(249, 246, 246, 0.7); /* semi-transparent white */
     border-radius: 8px;
     padding: 30px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 15px 15px 5px rgb(110, 108, 108); /* Combine both shadows */
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 15px 15px 5px rgb(110, 108, 108);
+    max-height: calc(100vh - 120px); 
+
+    /* Apply a blur effect to the background */
+    backdrop-filter: blur(10px); /* Blur the elements behind the container */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+  
+    /* Optional: Fallback for browsers that do not support backdrop-filter */
+    /* This will not show the blur effect but will keep the background semi-transparent */
+    @supports not (backdrop-filter: blur(10px)) {
+      background-color: rgba(255, 255, 255, 0.5); /* More transparency if blur is not supported */
+    }
+    
   }
   
-
-
-
-
 
   iframe {
     box-shadow: 15px 15px 5px rgb(110, 108, 108);
@@ -70,8 +58,18 @@ body {
   
   .logo {
     position: absolute;
+    align-self: auto;
     top: 10px;
     left: 10px;
+    max-width: 17vw;
+    height: auto;
+    border-radius: 5%;
+  }
+
+  .logoHome {
+    position: absolute;
+    align-self: auto;
+    top: 10px;
     max-width: 28vw;
     height: auto;
     border-radius: 5%;
@@ -396,130 +394,17 @@ body {
   }
   
   
-  .activity {
-    margin-bottom: 20px;
-    width: 88%;
-    direction: rtl;
-  }
-  
-  .places {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .place {
-    text-align: center;
-    width: 100%;
-  }
-  
-  .place h3 {
-    margin-bottom: 10px;
-    display: inline;
-  }
-  
-  .place img {
-    width: 100px;
-    height: 100px;
-    object-fit:fill;
-    border-radius: 8px;
-  }
-  
-  .place a {
-    display: block;
-    text-decoration: none;
-    color: #343a40;
-  }
-  
-  .place a:hover {
-    color: #1c1f23;
-  }
-  
-  #containerActivities {
-    background-color: #f2f2f2;
-    padding: 20px;
-    direction: rtl;
-    max-width: 600px;
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-  }
-  
-  .activity {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .activity h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-  
-  .heart-button {
-    background-color: transparent;
-    border: none;
-    width: 25px;
-    height: 25px;
-    background-image: url("https://shorturl.at/pLR35");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    cursor: pointer;
-  }
-  
-  .heart-button.filled {
-    background-image: url("https://shorturl.at/clDK2");
-  }
-  
-  
-  .activity {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px; 
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .container {
-    background-color: #f2f2f2;
-    padding: 20px;
-    overflow-y: auto; /* Add overflow-y property to enable vertical scrolling */
-  }
-
-  .container {
-    max-height: calc(100vh - 120px); 
-  }
-  
-  #wrongMessage {
-    display: flex;
-    position: absolute;
-    background-color: #f2f2f2;
-    top: 1vh;
-    border-radius: 4px;
-    z-index: 1;
-    animation: fadeIn 1.5s;
-    animation-iteration-count: 1;
-    animation-delay: 0.5s;
-  }
-  
   /* Add animation (fade in the popup) */
   
   @keyframes fadeIn {
     from {opacity: 1;}
     to {opacity:0 ;}
   }
-  
-  .placeIDs {
-    display: none;
-  }
 
   #request {
     direction: rtl;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 80%;
   }
 
   #popup-comment {
