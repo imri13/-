@@ -29,7 +29,7 @@ body {
   left: 0; /* Position at the left of the parent element or the viewport */
   transition: transform 0.3s ease; /* Smooth transition for the grow effect */
   font-family: "suezone"; /* Correct the font-family name if it's not right */
-  font-size: 10em; /* Adjust font-size as needed to make it much bigger */
+  font-size: 2em; /* Adjust font-size as needed to make it much bigger */
   text-shadow: 2px 2px 4px #000; /* Example shadow - black, offset 2px right and down, blur radius 4px */
 }
 
