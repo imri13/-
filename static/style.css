@@ -405,6 +405,7 @@ body {
     direction: rtl;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 80%;
+    resize: none;
   }
 
   #popup-comment {
